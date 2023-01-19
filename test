@@ -1,0 +1,78 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+class Person
+{
+	string name;
+	int age;
+
+	Person() {
+		name = "Bruce Wayne";
+		age = 26;
+	}
+	Person(string name, int age)
+	{
+		this->name; = name;
+		this->age = age;
+	}
+};
+
+//Super variable: Superhero
+class Superhero: private Person
+{
+public:
+	string secretIdentity;
+	int timesDied;
+	int popularity;
+	double speed;
+
+	//Constructor:  special function called when
+	//declaring new instance of class
+	Superhero()
+	{
+		this -> secretIdentity = "normal human";
+		timesDied = 0;
+		popularity = 0;
+		speed = 5;
+	}
+
+	//parameterized constructor
+	Superhero(string identity, int basespeed)
+	{
+		secretIdentity = identity;
+		speed = basespeed;
+	}
+};
+
+int main()
+{
+	//may declar variables of type Superhero
+	Superhero spiderman;
+	Superhero spongebob;
+
+	//create new superhero using a parameterized constructor
+	Superhero batman("Bruce Wayne", 10);
+
+	//set attributes of class variables / objects
+	//spiderman.secretIdentity = "Peter Parker";
+	spiderman.timesDied = 1;
+	spiderman.popularity = 200;
+	spiderman.speed = 50;
+
+	spongebob.secretIdentity = "normal sponge";
+	spongebob.speed = -2;
+
+
+	//access variables
+	cout << "Spider man's secret identity is " << spiderman.secretIdentity << endl;
+	cout << "Spong bob's secret identity is " << spongebob.secretIdentity << endl;
+	cout << "Batman's secret identity is " << batman.secretIdentity << endl;
+
+	cout << "Sponge bob's popularity is " << spongebob.popularity << endl;
+
+
+
+	return 0;
+}
